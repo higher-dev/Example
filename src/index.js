@@ -1,19 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import store from './client/store/store';
+import { ClerkProvider } from '@clerk/clerk-react';
 
+import store from './client/store/store';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const clerk_key = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <ClerkProvider publishableKey={clerk_key} afterSignOutUrl="/">
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>
+  </ClerkProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

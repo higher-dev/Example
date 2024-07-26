@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
+import businessReducer from './reducers/businessReducer';
+import viewTypeReducer from './reducers/viewTypeReducer';
 
 const store = configureStore({
   reducer: {
-    // your reducers go here
+    showType : viewTypeReducer,
+    business : businessReducer
   },
 });
 

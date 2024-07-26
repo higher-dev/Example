@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { ClerkProvider } from '@clerk/clerk-react';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import store from './client/store/store';
 import './index.css';
